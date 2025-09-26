@@ -1,17 +1,20 @@
 import { useState } from "react";
-import CounterDisplay from "./CounterDisplay";
+import Counter from "./Counter";
+
+
 
 export default function App() { 
-  const [count, setCount] = useState(0); // state variable 
- 
+  const [counterList, setCounters] = useState([]); // list of counters
+
+  function addCounter(){
+    setCounters(counterList.concat(<Counter/>))
+  }
+
   return ( 
     <div style={{ textAlign: "center", marginTop: "3rem", fontFamily: "Arial" }}> 
-        <h1>My First React Counter</h1> 
-        <CounterDisplay count={count} /> 
-        <button onClick={() => setCount(count + 1)}>Increment</button> 
-        <button onClick={() => setCount(count - 1)}>Decrement</button> 
-        <button onClick={() => setCount(0)}>Reset</button>
-        {count < 0 && <p style={{ color: "red" }}>Careful! Negative count!</p>}
+        <h1>My First React Counterssssss</h1> 
+        <button onClick={() => addCounter()}>add Counter</button> 
+        {counterList}
     </div> 
   ); 
-} 
+}
