@@ -1,13 +1,12 @@
 import { useState } from "react";
-import CounterDisplay from "./CounterDisplay";
 
-export default function Counter({ name }) { 
+export default function CounterCard({ name }) { 
   const [count, setCount] = useState(0); // state variable 
  
   return ( 
     <div style={{ textAlign: "center", marginTop: "3rem", fontFamily: "Arial" }}> 
         <h1>{name}</h1> 
-        <CounterDisplay count={count} /> 
+        <h2>Count: {count}</h2>
         <button onClick={() => setCount(count + 1)}>Increment</button> 
         <button onClick={() => setCount(count - 1)}>Decrement</button> 
         <button onClick={() => setCount(0)}>Reset</button>

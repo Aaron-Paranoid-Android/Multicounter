@@ -1,5 +1,7 @@
 import { useState } from "react";
-import Counter from "./Counter";
+import CounterList from "./components/CounterList";
+import Header from "./components/Header";
+import AddCounterForm from "./components/AddCounterForm"
 
 
 
@@ -12,9 +14,9 @@ export default function App() {
 
   return ( 
     <div style={{ textAlign: "center", marginTop: "3rem", fontFamily: "Arial" }}> 
-        <h1>My First React Counterssssss</h1> 
-        <button onClick={() => addCounter()}>add Counter</button> 
-        {counterList}
+        <Header/>
+        <AddCounterForm/>
+        <CounterList/>
     </div> 
   ); 
 }
