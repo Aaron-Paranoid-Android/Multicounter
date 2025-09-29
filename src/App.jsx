@@ -7,7 +7,7 @@ export default function App() {
   const [counterList, setCounters] = useState([]); // list of counters
 
   function addCounter(){
-    setCounters(counterList.concat(<Counter/>))
+    setCounters(counterList.concat(<Counter name="name but better"/>))
   }
 
   return ( 
