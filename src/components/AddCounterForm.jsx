@@ -1,11 +1,10 @@
-import { useState } from "react";
-
-export default function AddCounterForm() {  
-    const [count, setCounters] = useState([]); // state variable 
+export default function AddCounterForm({ onAction }) {  
 
     function addCounter(){
-        setCounters(counterList.concat(<CounterCard name="name but better"/>))
+        onAction("name but better");
       }
 
-    return(<button onClick={() => addCounter()}>add Counter</button>);
+    return(
+        <button onClick={() => addCounter()}>add Counter</button>
+    );
 }

@@ -8,15 +8,15 @@ import AddCounterForm from "./components/AddCounterForm"
 export default function App() {  
   const [counterList, setCounters] = useState([]); // list of counters
 
-  function addCounter(){
-    setCounters(counterList.concat(<Counter name="name but better"/>))
+  function addCounter(dataFromChild){
+    setCounters(counterList.concat(dataFromChild))
   }
 
   return ( 
     <div style={{ textAlign: "center", marginTop: "3rem", fontFamily: "Arial" }}> 
         <Header/>
-        <AddCounterForm/>
-        <CounterList/>
+        <AddCounterForm onAction={addCounter}/>
+        <CounterList values={counterList}/>
     </div> 
   ); 
 }
