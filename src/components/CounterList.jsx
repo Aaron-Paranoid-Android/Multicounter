@@ -1,13 +1,20 @@
-import { useState } from "react";
 import CounterCard from "./CounterCard";
 
-
-
-export default function CounterList({ values }) {  
+export default function CounterList({ values, onUpdate, onReset, onDelete }) {  
   return ( 
     <div style={{ textAlign: "center", marginTop: "3rem", fontFamily: "Arial" }}>
-      {values.map((name) => (<CounterCard name={name}/>))}
-      {(values.length == 0) && <p style={{ color: "red" }}>List empty womp womp</p>}
+      {values.map((counter) => (
+        <CounterCard 
+          key={counter.id} 
+          id={counter.id}
+          name={counter.name} 
+          value={counter.value} 
+          onUpdate={onUpdate}
+          onReset={onReset}
+          onDelete={onDelete}
+        />
+      ))}
+      {values.length === 0 && <p style={{ color: "red" }}>No counters yet</p>}
     </div>
   ); 
 }
