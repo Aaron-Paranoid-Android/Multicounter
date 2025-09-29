@@ -1,5 +1,8 @@
-export default function Header() {  
-    return(
-        <h1>My First React Counterssssss</h1> 
-    );
+export default function Header({ total }) {  
+  return (
+    <div>
+      <h1>My First React Counters</h1>
+      <h2>Total: {total}</h2>
+    </div>
+  );
 }
