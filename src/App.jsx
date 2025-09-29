@@ -3,7 +3,7 @@ import Counter from "./Counter";
 
 
 
-export default function App() { 
+export default function App() {  
   const [counterList, setCounters] = useState([]); // list of counters
 
   function addCounter(){
