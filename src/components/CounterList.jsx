@@ -13,7 +13,7 @@ export default function CounterList() {
   return ( 
     <div style={{ textAlign: "center", marginTop: "3rem", fontFamily: "Arial" }}>
       {counterList}
-      {counterList.length == 0 && <p style={{ color: "red" }}>List empty womp womp<p/>}
-    </div> 
+      {(counterList.length == 0) && <p style={{ color: "red" }}>List empty womp womp</p>}
+    </div>
   ); 
 }
